@@ -33,7 +33,7 @@ function App() {
       >
         <Routes>
           <Route path="/" element={<LandingPage refs={ref} />} />
-          <Route path="/works" element={<WorksPage />} />
+          <Route path="/works" element={<WorksPage refs={ref} />} />
         </Routes>
       </div>
     </div>
