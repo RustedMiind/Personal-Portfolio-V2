@@ -1,0 +1,68 @@
+.app {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  > video.bg-main,
+  > img.bg-main {
+    &.loading {
+      transform: scale(3) rotate(-30deg);
+      filter: grayscale(1);
+      // filter: blur(0.2rem);
+    }
+    transition: 600ms;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -5;
+  }
+  .page {
+    transition: transform 600ms cubic-bezier(0.785, 0.135, 0.15, 0.86),
+      opacity 600ms linear;
+    width: calc(100% - 4rem);
+    height: calc(100% - 4rem);
+    background-color: black;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    &.loading {
+      opacity: 0;
+      transform: translateX(100vw);
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    & {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .app {
+    .page {
+      width: calc(100%);
+      height: calc(100% - 4rem);
+      background-color: black;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+      & {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    }
+  }
+}

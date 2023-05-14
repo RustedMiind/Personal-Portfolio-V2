@@ -1,0 +1,157 @@
+.landing-page .about-me {
+  display: flex;
+  height: calc(100vh - 4rem);
+  .left-nav {
+    display: flex;
+    flex-direction: column;
+    // align-items: center;
+    text-align: start;
+    justify-content: center;
+    width: 8rem;
+    button.section-button {
+      text-align: start;
+      padding: 3rem 2rem;
+      width: 100%;
+      position: relative;
+      cursor: pointer;
+      transition: 200ms;
+      font-size: 1rem;
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 0.5rem;
+        background-color: rgb(239 68 68);
+
+        transition: 300ms linear;
+      }
+      &:hover::before,
+      &.active::before {
+        background-color: rgb(153 246 228);
+      }
+    }
+  }
+  .content {
+    width: calc(100% - 8rem);
+  }
+  .content .pages {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .page {
+      transition: 400ms ease-in;
+      width: 100%;
+      height: 100%;
+      padding: 2rem;
+      position: absolute;
+      transform: translateX(-100%);
+      pointer-events: none;
+      opacity: 0;
+      &.active {
+        transition: 1000ms ease-in-out;
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: all;
+        z-index: 10;
+      }
+    }
+  }
+  .content .pages {
+    font-size: 1.2rem;
+  }
+  .content .pages .page.education {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .section {
+      margin: 2rem 0;
+    }
+  }
+  .content .pages .page.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .section-double {
+      margin: 2rem 0;
+      display: flex;
+      justify-content: space-between;
+      .nested-section {
+        width: 48%;
+      }
+    }
+  }
+  .content .pages .page.personal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .section {
+      margin: 2rem 0;
+    }
+  }
+}
+
+@media (max-width: 1023px) {
+  .landing-page .about-me {
+    height: calc(100% - 8rem);
+    flex-direction: column;
+    .left-nav {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+      button.section-button {
+        text-align: center;
+        padding: 3rem 2rem;
+        width: 33.3%;
+        position: relative;
+        cursor: pointer;
+        transition: 200ms;
+        font-size: 1rem;
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 0.5rem;
+          width: 100%;
+          background-color: rgb(239 68 68);
+
+          transition: 300ms linear;
+        }
+        &:hover::before,
+        &.active::before {
+          background-color: rgb(153 246 228);
+        }
+      }
+    }
+
+    .content {
+      height: calc(80% - 8rem);
+      width: 100%;
+    }
+    .content .pages {
+      position: absolute;
+      width: 100%;
+      min-height: 60%;
+      height: fit-content;
+    }
+    .content .pages .page.skills {
+      .section-double {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .nested-section {
+          width: 100%;
+          margin: 1rem 0;
+        }
+      }
+    }
+  }
+}

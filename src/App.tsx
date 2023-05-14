@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./app.scss";
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/langing-page/LandingPage";
+import bg from "./content/app-bg-video.mp4";
+import bgimg from "./content/bg-static2.jpg";
+import React, { useContext, useRef } from "react";
+import { Context } from "./contexts/PageContext";
+import WorksPage from "./pages/works-page/WorksPage";
 
 function App() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [pageState] = useContext(Context);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      {/* <video
+        className={`bg-main ${pageState.isLoading ? "loading" : ""}`}
+        autoPlay={true}
+        loop={true}
+        muted={true}
+      >
+        <source src={bg} />
+        Your Browser doesn't Support this effect type
+      </video> */}
+      <img
+        className={`bg-main ${pageState.isLoading ? "loading" : ""}`}
+        alt="background"
+        src={bgimg}
+      />
+      <div
+        className={`page ${pageState.isLoading ? "loading" : ""}`}
+        id="Page"
+        ref={ref}
+      >
+        <Routes>
+          <Route path="/" element={<LandingPage refs={ref} />} />
+          <Route path="/works" element={<WorksPage />} />
+        </Routes>
+      </div>
     </div>
   );
 }
