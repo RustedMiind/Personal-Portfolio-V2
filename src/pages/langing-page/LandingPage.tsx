@@ -22,16 +22,18 @@ function LandingPage({ refs }: PropsType) {
   }, [refs]);
   return (
     <div className={"landing-page " + (scrolled ? "scrolled" : "")}>
-      <div
-        className={`hire-me-flow ${
+      <a
+        href="Ali Soliman - CV.pdf"
+        target="_blank"
+        className={`download-cv-flow ${
           scrolled >= window.innerHeight * 0.7 ? "active" : ""
         }`}
         style={{
           transform: `translateY(${scrolled}px)`,
         }}
       >
-        Hire Me
-      </div>
+        View CV
+      </a>
       <Navbar />
       <div className="intro">
         <div

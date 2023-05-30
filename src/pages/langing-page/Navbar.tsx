@@ -18,7 +18,7 @@ function Navbar() {
           <CustomLink to="/works">Works</CustomLink>
         </li>
         <li>
-          <CustomLink to="/">Contact me</CustomLink>
+          <CustomLink to="/contact">Contact me</CustomLink>
         </li>
       </ul>
     </nav>

@@ -5,11 +5,7 @@ function RightNav({ refs }: PropsType) {
   const [scrolled, setScrolled] = useState(0);
   useEffect(() => {
     const eff = function () {
-      setScrolled(
-        refs.current?.scrollTop && refs.current?.scrollTop > 50
-          ? refs.current?.scrollTop
-          : 0
-      );
+      setScrolled(refs.current?.scrollTop ? refs.current?.scrollTop : 0);
     };
     refs.current?.addEventListener("scroll", eff);
     return () => {
@@ -19,7 +15,7 @@ function RightNav({ refs }: PropsType) {
   return (
     <nav
       className="right-nav"
-      // style={{ transform: `translateY(${scrolled}px)` }}
+      style={{ transform: `translateY(${scrolled}px)` }}
     >
       <CustomLink className="nav-link" to="/">
         Home

@@ -6,6 +6,10 @@ import bgimg from "./content/bg-static2.jpg";
 import React, { useContext, useRef } from "react";
 import { Context } from "./contexts/PageContext";
 import WorksPage from "./pages/works-page/WorksPage";
+import ContactMePage from "./pages/contact-me-page/ContactMePage";
+import axios from "axios";
+
+axios.defaults.withCredentials = true;
 
 function App() {
   const ref = useRef<HTMLDivElement>(null);
@@ -34,6 +38,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage refs={ref} />} />
           <Route path="/works" element={<WorksPage refs={ref} />} />
+          <Route path="/contact" element={<ContactMePage />} />
         </Routes>
       </div>
     </div>

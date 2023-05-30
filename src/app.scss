@@ -36,7 +36,7 @@
     overflow-y: scroll;
     &.loading {
       opacity: 0;
-      transform: translateX(100vw);
+      transform: translateX(120vw) rotate(20deg);
     }
     &::-webkit-scrollbar {
       display: none;
@@ -50,6 +50,7 @@
 
 @media (max-width: 1023px) {
   .app {
+    height: 90vh;
     .page {
       width: calc(100%);
       height: calc(100% - 4rem);

@@ -54,7 +54,7 @@ function AboutMe() {
             </div>
             <div className="section">
               <p>Age: 19 Years old</p>
-              <p>Birth Date: 6 - 7 - 2003</p>
+              <p>Birth date: 6 - 7 - 2003</p>
               <p>Nationality: Egyptian</p>
               <p>Current Location: Helwan, Cairo</p>
             </div>
