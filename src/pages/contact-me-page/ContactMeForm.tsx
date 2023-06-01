@@ -138,7 +138,7 @@ function ContactMeForm() {
           Subject <span>Please Enter The Subject of your message</span>{" "}
         </label>
         <input
-          type="tel"
+          type="text"
           name="subject"
           value={form.subject}
           className={formErrors.subject ? "" : "error"}

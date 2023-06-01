@@ -1,6 +1,8 @@
 .landing-page .about-me {
   display: flex;
-  height: calc(100vh - 4rem);
+  min-height: calc(60vh);
+  padding: 4rem 0;
+  height: fit-content;
   .left-nav {
     display: flex;
     flex-direction: column;
@@ -39,7 +41,8 @@
   .content .pages {
     position: relative;
     width: 100%;
-    height: 100%;
+    height: fit-content;
+    min-height: 50rem;
     display: flex;
     align-items: center;
     justify-content: center;
